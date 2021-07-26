@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  mssqlserver:
+    image: mcr.microsoft.com/mssql/server
+    hostname: mssqlserver
+    container_name: mssqlserver
+    # volumes:
+    #   - ./databases:/var/opt/mssql
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: "y"
+      MSSQL_SA_PASSWORD: "Password!"
