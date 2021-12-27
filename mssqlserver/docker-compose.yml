@@ -1,10 +1,12 @@
 version: "3.1"
 
 services:
+
   mssqlserver:
     image: mcr.microsoft.com/mssql/server
     hostname: mssqlserver
     container_name: mssqlserver
+    # restart: always
     # volumes:
     #   - ./databases:/var/opt/mssql
     ports:

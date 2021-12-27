@@ -5,19 +5,24 @@ services:
   mongo:
     image: mongo
     hostname: mongo
-    container_name: mongo    
+    container_name: mongo
+    #restart: always
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: sa
       MONGO_INITDB_ROOT_PASSWORD: Password
 
-  mongo-express:
-    image: mongo-express
-    hostname: mongo-express
-    container_name: mongo-express    
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: sa
-      ME_CONFIG_MONGODB_ADMINPASSWORD: Password
+  # mongo-express:
+  #   image: mongo-express
+  #   hostname: mongo-express
+  #   container_name: mongo-express
+  #   restart: always
+  #   depends_on:
+  #     - mongo
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: sa
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: Password
+  #     ME_CONFIG_MONGODB_URL: mongodb://sa:Password@mongo:27017/
